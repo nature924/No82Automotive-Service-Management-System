@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.RexiaoqicheDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.RexiaoqicheEntity" id="rexiaoqicheMap">
+        <result property="qichemingcheng" column="qichemingcheng"/>
+        <result property="qichetupian" column="qichetupian"/>
+        <result property="qichepinpai" column="qichepinpai"/>
+        <result property="qichefenlei" column="qichefenlei"/>
+        <result property="peizhi" column="peizhi"/>
+        <result property="zuowei" column="zuowei"/>
+        <result property="qicheyanse" column="qicheyanse"/>
+        <result property="shangshinianfen" column="shangshinianfen"/>
+        <result property="qichejiage" column="qichejiage"/>
+        <result property="shuliang" column="shuliang"/>
+        <result property="canshupeizhi" column="canshupeizhi"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="clicknum" column="clicknum"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.RexiaoqicheVO" >
+		SELECT * FROM rexiaoqiche  rexiaoqiche         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.RexiaoqicheVO" >
+		SELECT  rexiaoqiche.* FROM rexiaoqiche  rexiaoqiche 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.RexiaoqicheView" >
+
+		SELECT  rexiaoqiche.* FROM rexiaoqiche  rexiaoqiche 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.RexiaoqicheView" >
+		SELECT * FROM rexiaoqiche  rexiaoqiche <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
